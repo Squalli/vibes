@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
     <link rel="stylesheet" media="all" href="style.css">
@@ -15,7 +15,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <section id="headmenu" class="flex">
+            <section id="headmenu" class="padded flex">
                 <a href="">
                     <img id="logo" src="./img/logo.png" alt="">
                 </a>
@@ -27,16 +27,19 @@
                     <a href="">contact</a>
                     <a href="">pages</a>
                 </nav>
+                <a id="burger" class="button"><span class="fas fa-bars"></span></a>
             </section>
-            <section id="hero">
+            <section id="hero" class="text-center extra-padded">
                 <h1>HTML template for creative folks and design agencies</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem coronavirus ullam officia esse perspiciatis dolorem repudiandae.</p>
-                <button class="button">read more</button>
+                <p>
+                    <a href="" class="button">read more</a>
+                </p>
             </section>
         </header>
        
         <main>
-            <section id="welcome" class="flex">
+            <section id="welcome" class="padded flex flex-x3">
                 <article>
                     <h2>Why choose us?</h2>
                     <p><strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quisquam voluptatibus sequi saepe ipsam</strong></p>
@@ -46,7 +49,31 @@
                 </article>
                 <article>
                     <h2>What you get?</h2>
-                    
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2"><span class="fab fa-wordpress fa-2x"></span></td>
+                                <td><strong>COLORFUL & COMPACT</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Je ne sais plus ce que je dois écrire</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><span class="fas fa-cog fa-2x"></span></td>
+                                <td><strong>RAPIDE & PAS CHER</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Je ne sais plus ce que je dois écrire</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><span class="fas fa-paper-plane fa-2x"></span></td>
+                                <td><strong>BEAVIS & BUTTHEAD</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Je ne sais plus ce que je dois écrire</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </article>
                 <article id="accordion">
                     <div class="accordion-element">
@@ -65,53 +92,93 @@
             </section>
             <section id="gallery">
                 <div id="gallery-imgs" class="flex">
-
+                    <figure><img src="./img/photo1.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo2.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo3.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo4.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo4.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo3.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo1.jpg" alt=""><span></span></figure>
+                    <figure><img src="./img/photo2.jpg" alt=""><span></span></figure>
                 </div>
-                <div id="gallery-filters" class="flex"></div>
+                <div id="gallery-nav" class="padded flex">
+                    <p id="gallery-filters">
+                        <a class="active" href="">ALL</a>
+                        <a href="">IMAGE</a>
+                        <a href="">AUDIO</a>
+                        <a href="">VIDEO</a>
+                    </p>
+                    <a class="button btn-rose border-rose" href="">load more</a>
+                </div>
             </section>
-            <section id="testimonials">
-                <div>
+            <section id="testimonials" class="padded ">
+                <h1 class="text-center">TEStimonials</h1>
+                <div class="title-separator"></div>
+                <div class="testimonial">
                     <img src="./img/avatar.png">
                     <blockquote>
                         <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced. Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
                         <footer><strong>Aldous Huxley</strong>, Brave New World</footer>
                     </blockquote>
                 </div>
-                <div>
+                <div class="testimonial">
                     <img src="./img/avatar.png">
                     <blockquote>
                         <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced. Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
                         <footer><strong>Aldous Huxley</strong>, Brave New World</footer>
                     </blockquote>
                 </div>
-                <div>
+                <div class="testimonial">
                     <img src="./img/avatar.png">
                     <blockquote>
                         <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced. Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
                         <footer><strong>Aldous Huxley</strong>, Brave New World</footer>
                     </blockquote>
                 </div>
-            
+                <p class="text-center">
+                    <a href="" class="button border-rose text-rose">BECOME OUR PIGEON</a>
+                </p>
             </section>
-            <section id="buy-now"></section>
-            <section id="contact">
-                <form action="" class="flex">
+            <section id="buy-now" class="extra-padded"></section>
+            <section id="contact" class="padded">
+                <h1 class="text-center">CONTACT</h1>
+                <div class="title-separator"></div>
+                <form action="" class="flex flex-x2">
                     <div>
+                        <label class="required">Your name</label>
                         <input type="text">
+                        <label class="required">Your email</label>
                         <input type="text">
+                        <label>Your phone</label>
                         <input type="text">
                     </div>
                     <div>
+                        <label>Your subject</label>
                         <input type="text">
-                        <input type="text">
-                        <input type="text">
+                        <label class="required">Your message</label>
+                        <textarea></textarea>
+                        <button type="submit" class="button btn-rose border-rose">send</button>
                     </div>
                 </form>
             </section>
         </main>
         <footer>
-            <section id="footer-info" class="flex"></section>
-            <section id="footer-nav" class="flex"></section>
+            <section id="footer-info" class="padded flex flex-x3">
+                <div>
+                    <h3>About vibes</h3>
+                    <div class="title-separator"></div>
+                </div>
+                <div>
+                    <h3>newsletter</h3>
+                    <div class="title-separator"></div>
+                </div>
+                <div>
+                    <h3>twitter feed</h3>
+                    <div class="title-separator"></div>
+                </div>
+            
+            </section>
+            <section id="footer-nav" class="padded flex"></section>
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -125,6 +192,12 @@
                 $(this).siblings("p").slideDown(400)
             }
             
+        })
+
+        $("#gallery-filters a").on("click", function(e){
+            e.preventDefault()
+            $("#gallery-filters a").removeClass("active")
+            $(this).addClass("active")
         })
     </script>
 </body>

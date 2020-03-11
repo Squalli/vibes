@@ -12,6 +12,11 @@ body{
     background-color: #bbb;
 }
 
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight:  bold;
+}
+
 p:not(#hero p, #buy-now p){
     line-height: 1.5em;
     text-align: justify;
@@ -19,9 +24,19 @@ p:not(#hero p, #buy-now p){
 
 .flex{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.flex>*{
+
+.flex-x2>*{
+    max-width: 47%;
     flex: 1;
+    flex-wrap: wrap;
+}
+.flex-x3>*{
+    max-width: 30%;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .button{
@@ -32,6 +47,9 @@ p:not(#hero p, #buy-now p){
     text-transform: uppercase;
     border-color: white;
     background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
 }
 .btn-rose{
     background-color: var(--pink-color)
@@ -39,16 +57,36 @@ p:not(#hero p, #buy-now p){
 .border-rose{
     border-color: var(--pink-color);
 }
+
 .text-rose{
     color: var(--pink-color);
+}
+.text-center{
+    text-align: center;
+}
+section>h1{
+    text-transform: uppercase;
+}
+.title-separator{
+    width: 7%;
+    min-width: 3em;
+    height: 3px;
+    background-color: var(--pink-color);
+    margin: 0.5em auto 1em;
+}
+footer .title-separator{
+    margin: 0.5em 0 1em;
 }
 
 #wrapper{
     max-width: 1200px;
     margin: auto;
 }
-section:not(#gallery), #gallery-filters{
-    padding : 1em 8em;
+.padded{
+    padding : 1em 8em 2em;
+}
+.extra-padded{
+    padding: 4em 14em;
 }
 main section{
     background-color: white;
@@ -67,8 +105,8 @@ main section{
     text-transform: uppercase;
     color: white;
     text-decoration: none;
-    padding: 0.5em 0;
-    margin: 0 0.5em;
+    padding: 0.3em 0.5em;
+    
 }
 #headmenu a:hover{
     border-bottom: 1px solid white;
@@ -79,23 +117,45 @@ main section{
 #headmenu #logo{
     height: 100px;
 }
-section#hero{
-    text-align: center;
-    padding: 4em 14em;
+#burger{
+    display: none;
 }
+
 section#hero h1{
     text-transform: uppercase;
 }
-
+#welcome article{
+    margin-top: 1em;
+}
+#welcome article>*:first-child{
+    margin-top: 1rem;
+}
 #welcome article:first-child p:first-of-type{
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.6em;
 }
+#welcome table td{
+    vertical-align: top;
+}
 
+#welcome table tr:nth-child(odd) td:first-child{
+    padding-right: 1em;
+}
+#welcome table tr:nth-child(even) td:last-child{
+    padding-bottom: 1rem;
+    font-size: 0.8em;
+}
+
+#accordion{
+    margin-top: 2em;
+}
 .accordion-element{
     border: 1px solid #aaa;
     margin-bottom: 1em;
     padding: 0 2em;
+}
+.accordion-element h4{
+    cursor: pointer;
 }
 .accordion-element:not(:first-child) p{
     display: none;
@@ -108,13 +168,49 @@ section#hero h1{
     margin: 0.8rem 0;
 }
 
-#testimonials>div{
+#gallery-imgs{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#gallery-imgs figure{
+    margin: 0;
+    width: 25%;
+    height: 200px;
+    overflow: hidden;
+}
+
+#gallery-imgs figure img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+#gallery-nav{
+    align-items: center;
+    padding-top: 2em;
+    border-bottom: 1px solid #eee;
+}
+
+#gallery-filters a{
+    color: #aaa;
+    text-decoration: none;
+    margin-right: 1em;
+}
+#gallery-filters a:hover{
+    color: #666;
+}
+#gallery-filters a.active{
+    color: var(--pink-color);
+   
+}
+
+#testimonials>div.testimonial{
     display: flex;
     align-items: flex-start;
     padding: 2em 0;
-    border-bottom: 1px solid #aaa; 
+    border-bottom: 1px solid #eee; 
 }
-#testimonials>div:last-child{
+#testimonials>div.testimonial:last-of-type{
     border: none;
 }
 #testimonials img{
@@ -166,4 +262,76 @@ blockquote p{
     font-style: oblique;
     font-size: 1.5em;
 }*/
-
+form label, form input, form textarea{
+    display: inline-block;
+    width: 100%;
+    height: 2em;
+    line-height: 1.5em;
+    vertical-align: bottom;
+}
+form label{
+    margin-top: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin-bottom: 0.2em;
+}
+form label.required::after{
+    content: "*";
+    color: var(--pink-color);
+}
+form input, form textarea{
+    border: none;
+    background-color: #eee;
+}
+form textarea{
+    height: 6em;
+}
+button[type='submit']{
+    margin-top: 1em;
+}
+@media all and (max-width: 930px){
+    .flex-x3>*:first-child{
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+    .flex-x3>*{
+        max-width: 47%;
+    }
+    .padded, .extra-padded{
+        padding : 1em 4em 2em;
+    }
+    
+    #gallery-imgs figure{
+        width: 50%;
+    }
+    #headmenu nav{
+        display: none;
+    }
+    #burger{
+        display: initial;
+    }
+}
+@media all and (max-width: 650px){
+    .flex{
+        display: block;
+    }
+    .flex-x3>*, .flex-x2>*{
+        max-width: 100%;
+    }
+    .padded, .extra-padded{
+        padding : 1em 1em 2em;
+    }
+    
+    #gallery-imgs figure{
+        width: 100%;
+    }
+    #gallery-nav{
+        text-align: center;
+    }
+    #gallery-filters a{
+        margin-left: 1em;
+    }
+}
